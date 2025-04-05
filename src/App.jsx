@@ -1,16 +1,18 @@
-import "./App.css";
-import Banner from "./components/Banner";
-import CoverCard from "./components/CoverCard";
-import Header from "./components/Header";
-import Section from "./components/Section";
-import Sidebar from "./components/Sidebar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ProductProvider } from "./context/ProductContext";
 import HomePage from "./pages/HomePage";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   return (
-    <>
-      <HomePage />
-    </>
+    <ProductProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/category" element={<CategoryPage />} />
+        </Routes>
+      </Router>
+    </ProductProvider>
     /** 
      <>
       <div className="relative">

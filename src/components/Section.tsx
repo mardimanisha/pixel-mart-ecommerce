@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './Product'
-import products from '../data/product'
+import products from '../../public/data/product'
 
 interface SectionProps {
     title: string;

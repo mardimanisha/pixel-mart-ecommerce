@@ -1,9 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { useState } from "react";
-import { createContext } from "react";
 import { fetchProducts } from "../services/productService";
-
-export const ProductContext = createContext();
+import { ProductContext } from "./ProductContext";
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);

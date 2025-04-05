@@ -3,7 +3,7 @@ import MainLayout from '../components/layout/MainLayout'
 import CoverCard from '../components/CoverCard'
 import Banner from '../components/Banner'
 import Section from '../components/Section'
-import covers from '../data/cover'
+import covers from '../../public/data/cover'
 
 const HomePage = () => {
     return (

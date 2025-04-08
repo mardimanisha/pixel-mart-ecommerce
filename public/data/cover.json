@@ -1,0 +1,37 @@
+{
+  "covers" : [
+  {
+    "id": 1,
+    "name": "party-wear",
+    "images":
+      "https://images.pexels.com/photos/1408089/pexels-photo-1408089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 2,
+    "name": "women",
+    "images":
+      "https://media.licdn.com/dms/image/v2/D5612AQEgKf0m4fGi4w/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721704715282?e=2147483647&v=beta&t=8ZrsA1Jhe0D5qJA8bdSerBq5jrTXQYVzeUOHKbDU-Ng"
+  },
+  {
+    "id": 3,
+    "images":
+      "https://i.pinimg.com/736x/22/81/2f/22812f531050e1163736c7c97cc2be8b.jpg"
+  },
+  {
+    "id": 4,
+    "images":
+      "https://i.pinimg.com/736x/2d/80/e2/2d80e22fbc54bd535c8bad9808ddcb99.jpg"
+  },
+  {
+    "id": 5,
+    "images":
+      "https://i.pinimg.com/736x/44/34/be/4434be8c092f2fea1a14b865a5a6828a.jpg"
+  },
+  {
+    "id": 6,
+    "images":
+      "https://i.pinimg.com/736x/b8/a0/b4/b8a0b41caf05955b7f70eaebeaf66a30.jpg"
+  }
+]
+}
+

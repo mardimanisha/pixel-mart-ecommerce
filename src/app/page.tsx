@@ -21,7 +21,7 @@ export default function Home() {
                     <h1 className='text-2xl font-bold mb-6'>Explore More</h1>
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 place-items-center'>
                         {covers.covers.slice(2, 6).map((cover) => (
-                            <CoverCard key={cover.id} name={cover.name} image={cover.images} />
+                            <CoverCard key={cover.id} covername={cover.covername} image={cover.images} />
                         ))}
                     </div>
                     

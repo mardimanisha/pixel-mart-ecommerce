@@ -2,16 +2,20 @@ import React from 'react'
 import MainLayout from '@/layout/MainLayout'
 import ProductDetail from '@/components/ProductDetail'
 import Product from '@/components/Product'
-import products from '../../../../../public/data/product' // ✅ NOT from public folder
+import products from '../../../../../public/data/product'
 
-type Props = {
-  params: {
-    category: string
-    product: string
-  }
+// Update the type definition to match Next.js requirements
+type Params = {
+  category: string
+  product: string
 }
 
-export default function ProductPage({ params }: Props) {
+// Use the standard Next.js page props pattern
+export default async function ProductPage({
+  params,
+}: {
+  params: Params
+}) {
   const { category, product } = params
 
   const matchedProduct = products.find(
@@ -46,7 +50,6 @@ export default function ProductPage({ params }: Props) {
     </MainLayout>
   )
 }
-
 
 export function generateStaticParams() {
   return products.map((product) => ({

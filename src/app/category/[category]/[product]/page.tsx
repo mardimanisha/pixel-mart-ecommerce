@@ -2,13 +2,16 @@ import React from 'react'
 import MainLayout from '@/layout/MainLayout'
 import ProductDetail from '@/components/ProductDetail'
 import Product from '@/components/Product'
-import products from '../../../../../public/data/product' 
+import products from '../../../../../public/data/product' // ✅ NOT from public folder
 
-export default function ProductPage({
-  params,
-}: {
-  params: { category: string; product: string }
-}) {
+type Props = {
+  params: {
+    category: string
+    product: string
+  }
+}
+
+export default function ProductPage({ params }: Props) {
   const { category, product } = params
 
   const matchedProduct = products.find(
@@ -42,4 +45,12 @@ export default function ProductPage({
       </div>
     </MainLayout>
   )
+}
+
+
+export function generateStaticParams() {
+  return products.map((product) => ({
+    category: product.category.toLowerCase(),
+    product: product.name.toLowerCase().replace(/\s+/g, '-'),
+  }))
 }

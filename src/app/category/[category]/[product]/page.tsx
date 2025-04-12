@@ -1,23 +1,20 @@
-import ProductDetail from '@/components/ProductDetail'
 import React from 'react'
-import products from '../../../../../public/data/product'
 import MainLayout from '@/layout/MainLayout'
+import ProductDetail from '@/components/ProductDetail'
 import Product from '@/components/Product'
+import products from '../../../../../public/data/product' 
 
-type ProductPageProps = {
-  params: {
-    category: string
-    product: string
-  }
-}
-
-export default function ProductPage({ params }: ProductPageProps) {
+export default function ProductPage({
+  params,
+}: {
+  params: { category: string; product: string }
+}) {
   const { category, product } = params
 
   const matchedProduct = products.find(
     (p) =>
-      String(p.category).toLowerCase() === category.toLowerCase() &&
-      String(p.name).toLowerCase().replace(/\s+/g, '-') === product.toLowerCase()
+      p.category.toLowerCase() === category.toLowerCase() &&
+      p.name.toLowerCase().replace(/\s+/g, '-') === product.toLowerCase()
   )
 
   if (!matchedProduct) {
@@ -31,7 +28,7 @@ export default function ProductPage({ params }: ProductPageProps) {
   return (
     <MainLayout>
       <ProductDetail product={matchedProduct} />
-      <div className="m-10 w-6xl">
+      <div className="m-10 max-w-6xl">
         <h1 className="text-2xl font-bold mb-4">Similar Products</h1>
         <div className="flex gap-6 flex-wrap">
           {similarProducts.length > 0 ? (

@@ -4,14 +4,14 @@ import products from '../../../../../public/data/product'
 import MainLayout from '@/layout/MainLayout'
 import Product from '@/components/Product'
 
-interface Params {
+interface PageProps {
     params: {
         category: string
         product: string
     }
 }
 
-const ProductPage = ({ params }: Params) => {
+const ProductPage = ({ params }: PageProps) => {
     const { category, product } = params
     
     const matchedProduct = products.find((p) => 

@@ -17,7 +17,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 }) => {
   return (
     <div className="flex flex-col">
-      <label className="mb-1 font-medium">{label}</label>
+      <label className="mb-1 align-top font-medium">{label}</label>
       <select
         className="p-2 border border-gray-300 rounded-md"
         value={selectedOption}

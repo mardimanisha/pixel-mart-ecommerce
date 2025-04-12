@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
       "lafemmeapero.com",
       "cdn.fynd.com",
       "i.etsystatic.com",
+      "i.ebayimg.com",
+      "substackcdn.com",
+      "images.fashiola.in",
     ],
   },
 };

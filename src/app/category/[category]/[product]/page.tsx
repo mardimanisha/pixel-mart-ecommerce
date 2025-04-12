@@ -4,11 +4,14 @@ import products from '../../../../../public/data/product'
 import MainLayout from '@/layout/MainLayout'
 import Product from '@/components/Product'
 
-export default function ProductPage({
-  params,
-}: {
-  params: { category: string; product: string }
-}) {
+type ProductPageProps = {
+  params: {
+    category: string
+    product: string
+  }
+}
+
+export default function ProductPage({ params }: ProductPageProps) {
   const { category, product } = params
 
   const matchedProduct = products.find(

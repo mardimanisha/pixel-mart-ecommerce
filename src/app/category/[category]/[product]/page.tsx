@@ -3,19 +3,23 @@ import MainLayout from '@/layout/MainLayout'
 import ProductDetail from '@/components/ProductDetail'
 import Product from '@/components/Product'
 import products from '../../../../../public/data/product'
+//import { Metadata } from 'next'
 
-// Update the type definition to match Next.js requirements
-type Params = {
-  category: string
-  product: string
+// Define the params structure for this dynamic route
+type ProductPageParams = {
+  params: {
+    category: string
+    product: string
+  }
+  searchParams: Record<string, string | string[] | undefined>
 }
 
-// Use the standard Next.js page props pattern
-export default async function ProductPage({
-  params,
-}: {
-  params: Params
-}) {
+// Make the component export a standard React FC and use 'async' since Next.js 
+// expects page components to be potentially async
+export default async function ProductPage({ 
+  params, 
+  searchParams 
+}: ProductPageParams) {
   const { category, product } = params
 
   const matchedProduct = products.find(

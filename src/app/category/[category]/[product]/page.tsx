@@ -1,18 +1,19 @@
+
 import React from 'react'
 import MainLayout from '@/layout/MainLayout'
 import ProductDetail from '@/components/ProductDetail'
 import Product from '@/components/Product'
 import products from '../../../../../public/data/product'
 
-interface PageProps {
+
+export default async function ProductPage({
+  params,
+}: {
   params: {
     category: string;
     product: string;
   };
-  searchParams: Record<string, string | string[] | undefined>;
-}
-
-const ProductPage = ({ params }: PageProps) => {
+}) {
   const { category, product } = params
 
   const matchedProduct = products.find(
@@ -47,8 +48,6 @@ const ProductPage = ({ params }: PageProps) => {
     </MainLayout>
   )
 }
-
-export default ProductPage;
 
 export function generateStaticParams() {
   return products.map((product) => ({

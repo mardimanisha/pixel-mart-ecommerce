@@ -3,23 +3,16 @@ import MainLayout from '@/layout/MainLayout'
 import ProductDetail from '@/components/ProductDetail'
 import Product from '@/components/Product'
 import products from '../../../../../public/data/product'
-//import { Metadata } from 'next'
 
-// Define the params structure for this dynamic route
-type ProductPageParams = {
+interface PageProps {
   params: {
-    category: string
-    product: string
-  }
-  searchParams: Record<string, string | string[] | undefined>
+    category: string;
+    product: string;
+  };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
-// Make the component export a standard React FC and use 'async' since Next.js 
-// expects page components to be potentially async
-export default async function ProductPage({ 
-  params, 
-  searchParams 
-}: ProductPageParams) {
+const ProductPage = ({ params }: PageProps) => {
   const { category, product } = params
 
   const matchedProduct = products.find(
@@ -54,6 +47,8 @@ export default async function ProductPage({
     </MainLayout>
   )
 }
+
+export default ProductPage;
 
 export function generateStaticParams() {
   return products.map((product) => ({
